@@ -1,5 +1,5 @@
 import CartWidget from "./CartWidget";
-import { Container,Text,Flex, Spacer,Box,Menu,MenuButton,MenuList,MenuItem, Heading } from '@chakra-ui/react'
+import { Container,Text,Flex, Spacer,Box,Menu,MenuButton,MenuList,MenuItem} from '@chakra-ui/react'
 
 const NavBar = () => {
   return (
@@ -13,9 +13,9 @@ const NavBar = () => {
     <Spacer />
 
   <Box w='400px' h='10' bg='red.600' > 
-  <Flex>
+  <Flex display="flex" alignItems="center" justifyContent="space-between" pt="2">
     <Menu>
-      <MenuButton>MUJER</MenuButton>
+      <MenuButton>Productos</MenuButton>
        <MenuList>
         <MenuItem as='a' href='#' color='black'>Sweaters Vanlon</MenuItem>
         <MenuItem as='a' href='#' color='black'>Camisas</MenuItem>
@@ -24,16 +24,12 @@ const NavBar = () => {
     </Menu>
     <Spacer />
     <Menu>
-     <MenuButton>HOMBRE</MenuButton>
-      <MenuList>
-        <MenuItem as='a' href='#' color='black'>Sweaters Vanlon</MenuItem>
-        <MenuItem as='a' href='#' color='black'>Accesorios</MenuItem>
-      </MenuList>
+      <MenuButton as='a' href='#'>Ofertas</MenuButton>
     </Menu>
-    <Spacer />
-    <Menu>
-      <MenuButton as='a' href='#'>OFERTAS</MenuButton>
-    </Menu>
+      <Spacer />
+      <Menu>
+        <MenuButton as='a' href='#'>Contacto</MenuButton> 
+      </Menu>
     </Flex>
   </Box>
     <Spacer />
