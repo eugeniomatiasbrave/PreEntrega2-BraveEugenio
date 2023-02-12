@@ -7,7 +7,7 @@ import { Heading, Center } from "@chakra-ui/react";
 const ItemListContainer = () => {
   const { category } = useParams();
 
-  const getDatos = () => {
+  const getInfo = () => {
     return new Promise((resolve, reject) => {
       if (Productos1.length === 0) {
         reject(new Error("No hay datos"));
@@ -18,15 +18,15 @@ const ItemListContainer = () => {
     });
   };
 
-  async function fetchingData() {
+  async function fetchingInfo() {
     try {
-      const datosFetched = await getDatos();
+      const datosFetched = await getInfo();
    } catch (err) {
       console.log(err);
     }
   }
 
-  fetchingData();
+  fetchingInfo();
 
   const catFilter = Productos1.filter((vanlon) => vanlon.category === category);
   return (

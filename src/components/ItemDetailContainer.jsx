@@ -6,8 +6,8 @@ import { useParams } from "react-router";
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [vanlon, setVanlon] = useState([]);
-  
-  const getDatos = () => {
+
+  const getInfo = () => {
     return new Promise((resolve, reject) => {
       if (Productos1.length === 0) {
         reject(new Error("No hay datos"));
@@ -19,16 +19,16 @@ const ItemDetailContainer = () => {
     });
   };
 
-  async function fetchingData() {
+  async function fetchingInfo() {
     try {
-      const datosFetched = await getDatos();
+      const datosFetched = await getInfo();
       setVanlon(datosFetched);
     } catch (err) {
       console.log(err);
     }
   }
 
-  fetchingData();
+  fetchingInfo();
   return <ItemDetail vanlon={Productos1} />;
 };
 
