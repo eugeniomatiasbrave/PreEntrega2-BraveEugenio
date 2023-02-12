@@ -7,12 +7,12 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 const App=() => {
   return (
   <BrowserRouter>
-     <NavBar />
+     <NavBar/>
       <Routes>
-        <Route exact path="/" element={<Inicio/>} />
-        <Route exact path="/catalogo" element={<ItemListContainer/>} /> 
-        <Route exact path="/category/:category" element={<ItemListContainer />}/>
-        <Route exact path="/item/:id" element={<ItemDetailContainer />} />    
+        <Route exact path="/" element={<Inicio/>}/>
+        <Route exact path="/catalogo" element={<ItemListContainer/>}/> 
+        <Route exact path="/category/:category" element={<ItemListContainer/>}/>
+        <Route exact path="/item/:id" element={<ItemDetailContainer />}/>    
       </Routes>
   </BrowserRouter>
   );
