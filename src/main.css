@@ -1,0 +1,20 @@
+.btn-cuenta{
+    background-color: rgb(186, 182, 182);
+    font-size: 20px;
+    width: 48px;
+}
+
+.fuente-brand{
+    font-family: 'Grechen Fuemen', cursive;
+    font-size: 30px;
+    padding-left: 40px;
+}
+
+.inicio-container{
+    padding: 10rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

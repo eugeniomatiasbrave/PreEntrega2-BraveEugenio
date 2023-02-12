@@ -1,36 +1,48 @@
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import { Container,Flex, Spacer,Box,Menu,MenuButton,MenuList,MenuItem} from '@chakra-ui/react'
-import "./NavBar.css";
+import "../main.css";
 
 
 const NavBar = () => {
   return (
   <>  
-  <Container maxW='100rem' bg='red.600' color='white'>
-    
+  <Container maxW='100rem' bg='red.600' color='white'> 
   <Flex>
     <Box w='300px' h='12' bg='red.600'>
-      <h2 className="fuente-brand">Susan Flo Sweaters</h2> 
+    <Link to={"/"}>
+      <h2 className="fuente-brand">Susan Flo Sweaters</h2> </Link>
     </Box>
     <Spacer />
-
   <Box w='400px' h='10' bg='red.600' > 
   <Flex display="flex" alignItems="center" justifyContent="space-between" pt="2">
+  <Menu>
+     <Link to={"/catalogo"}>
+      <MenuButton>Catalogo</MenuButton>
+     </Link>
+    </Menu>
+      <Spacer />
     <Menu>
       <MenuButton>Productos</MenuButton>
        <MenuList>
-        <MenuItem as='a' href='#' color='black'>Sweaters Vanlon</MenuItem>
-        <MenuItem as='a' href='#' color='black'>Camisas</MenuItem>
-        <MenuItem as='a' href='#' color='black'>Remeras</MenuItem>
+       <Link to={`/category/${"Sweaters Vanlon"}`}>
+        <MenuItem color='black'>Sweaters Vanlon</MenuItem>
+        </Link>
+        <Link to={`/category/${"Camisas"}`}>
+        <MenuItem color='black'>Camisas</MenuItem>
+        </Link>
+        <Link to={`/category/${"Remeras"}`}>
+        <MenuItem color='black'>Remeras</MenuItem>
+        </Link>
        </MenuList>
     </Menu>
-    <Spacer />
+    <Spacer/>
     <Menu>
-      <MenuButton as='a' href='#'>Ofertas</MenuButton>
+      <MenuButton>Ofertas</MenuButton>
     </Menu>
-      <Spacer />
+      <Spacer/>
       <Menu>
-        <MenuButton as='a' href='#'>Contacto</MenuButton> 
+        <MenuButton>Contacto</MenuButton> 
       </Menu>
     </Flex>
   </Box>

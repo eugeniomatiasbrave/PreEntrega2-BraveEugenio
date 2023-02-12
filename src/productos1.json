@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Sweater Cardigan",
+      "price": 500,
+      "description":
+        "Sweater cardigan talle L. ",
+      "stock": 7,
+      "category": "Sweaters Vanlon"
+    },
+    {
+      "id": 2,
+      "name": "Camisa Lisa",
+      "price": 1000,
+      "description":
+        "Camisa Lisa talle L. ",
+      "stock": 15,
+      "category": "Camisas"
+    },
+    {
+      "id": 3,
+      "name": "Remera Manga Corta",
+      "price": 700,
+      "description":
+        "Remera Manga Corta talle L. ",
+      "stock": 4,
+      "category": "Remeras"
+    },
+    {
+      "id": 4,
+      "name": "Sweater Hombre",
+      "price": 1500,
+      "description":
+        "Sweater Hombre talle L. ",
+      "stock": 10,
+      "category": "Sweaters Vanlon"
+    }
+  ]

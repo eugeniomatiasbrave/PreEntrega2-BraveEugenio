@@ -1,6 +1,6 @@
 import { useState} from "react";
-import { Box, Flex,Spacer,Text} from '@chakra-ui/react'
-import "./ItemCount.css";
+import { Box,Button, Flex,Spacer,Text} from '@chakra-ui/react'
+import "../main.css";
 
 const ItemCount = () => {
 
@@ -19,16 +19,15 @@ const ItemCount = () => {
  
   return (
   <>
-  <Text>Estado del carrito</Text>
   <Box borderWidth='1px' w={232}>
   <Flex maxW={230}>
-  <button className="btn-cuenta" disabled={Cuenta < 1}  onClick={restar}>-</button>
+  <Button variant='outline' colorScheme="red" disabled={Cuenta < 1}  onClick={restar}>-</Button>
   <Spacer/>
   <Text>{Cuenta}</Text>
    <Spacer/>
-   <button className="btn-cuenta" onClick={sumar}>+</button>
+   <Button variant='outline' colorScheme="red" onClick={sumar}>+</Button>
    <Spacer/>
-   <button className="btn-cuenta" onClick={resetear}>Reset</button> 
+   <Button variant='outline' colorScheme="red" onClick={resetear}>Reset</Button> 
   </Flex>
   </Box>
   </>
