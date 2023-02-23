@@ -10,24 +10,24 @@ const ItemCount = () => {
         setCuenta (Cuenta + 1)
         };
     const restar= ()=>{
-        setCuenta (Cuenta - 1)
+       
+        setCuenta (Cuenta - 1) };
         
-        };   
     const resetear= ()=>{
         setCuenta (0)
         };
- 
+        
   return (
   <>
   <Box borderWidth='1px' w={232}>
   <Flex maxW={230}>
-  <Button variant='outline' colorScheme="red" disabled={Cuenta < 1}  onClick={restar}>-</Button>
+  <Button variant='outline' colorScheme="red" size='sm' isDisabled={Cuenta < 1} onClick={restar}>-</Button>
   <Spacer/>
   <Text>{Cuenta}</Text>
    <Spacer/>
-   <Button variant='outline' colorScheme="red" onClick={sumar}>+</Button>
+   <Button variant='outline' colorScheme="red" size='sm' onClick={sumar}>+</Button>
    <Spacer/>
-   <Button variant='outline' colorScheme="red" onClick={resetear}>Reset</Button> 
+   <Button variant='outline' colorScheme="red" size='sm' onClick={resetear}>Reset</Button> 
   </Flex>
   </Box>
   </>

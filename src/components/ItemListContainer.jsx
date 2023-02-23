@@ -1,4 +1,5 @@
 import ItemList from "./ItemList";
+
 import Productos1 from "../productos1.json";
 import { useParams } from "react-router-dom";
 import { Heading, Center } from "@chakra-ui/react";
@@ -39,7 +40,9 @@ const ItemListContainer = () => {
       {category ? <ItemList vanlon={catFilter} /> : <ItemList vanlon={Productos1} />}
       
     </div>
+    
   );
+ 
 };
 
 export default ItemListContainer;

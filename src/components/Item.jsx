@@ -1,17 +1,17 @@
 import React from "react";
-import vanlonImagen from "../assets/vanlon.png";
+
 import {Center,Card,CardBody,Image,Heading,Text, Divider,Stack,CardFooter,Button,} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 
-const Item = ({ id, name, price, stock, category }) => {
+const Item = ({ id, name, price, stock, category, img }) => {
   return (
     <div>
       <div key={id}>
         <Center p="1rem">
           <Card>
             <CardBody >
-              <Image borderRadius="lg" src={vanlonImagen} />
+              <Image borderRadius="lg" src={img} />
               <Stack mt="6" spacing="3">
                 <Heading size="md">{name}</Heading>
                 <Text color="gray.600" fontSize="xl">
@@ -28,7 +28,7 @@ const Item = ({ id, name, price, stock, category }) => {
             <Divider />
             <CardFooter>
               <Center>
-                <Button variant="solid" colorScheme="red">
+                <Button variant="solid" colorScheme="red" size='sm'>
                   <Link to={`/item/${id}`}>Detalles</Link>
                 </Button>
               </Center>

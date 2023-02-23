@@ -1,5 +1,5 @@
 
-  import vanlonImagen from "../assets/vanlon.png";
+ 
   import { useParams } from "react-router-dom";
   import ItemCount from "./ItemCount";
   import { Center,Card,CardBody,Image,Stack,Heading,Text,Button,CardFooter,Divider,} from "@chakra-ui/react";
@@ -15,7 +15,7 @@
             <Center p="1rem">
               <Card>
                 <CardBody>
-                  <Image borderRadius="lg" src={vanlonImagen} />
+                  <Image   borderRadius="lg" src={vanlon.img} />
                   <Stack mt="6" spacing="3">
                     <Heading size="md">{vanlon.name}</Heading>
                     <Text color="blue.800" fontSize="l">
@@ -32,11 +32,11 @@
                     </Text>
                   </Stack>
                 </CardBody>
-                <Divider />
+                <Divider/>
                 <CardFooter>
                   <ItemCount stock={vanlon.stock} />
-                  <Center >
-                    <Button variant="solid" colorScheme="red">
+                  <Center>
+                    <Button variant="solid" colorScheme="red" size='sm'>
                       Comprar
                     </Button>
                   </Center>

@@ -6,7 +6,8 @@
       "description":
         "Sweater cardigan talle L. ",
       "stock": 7,
-      "category": "Sweaters Vanlon"
+      "category": "Sweaters Vanlon",
+      "img": "../Public/vanlonmujer.png"
     },
     {
       "id": 2,
@@ -15,7 +16,9 @@
       "description":
         "Camisa Lisa talle L. ",
       "stock": 15,
-      "category": "Camisas"
+      "category": "Camisas",
+      "img": "../Public/camisa1.png"
+      
     },
     {
       "id": 3,
@@ -24,7 +27,9 @@
       "description":
         "Remera Manga Corta talle L. ",
       "stock": 4,
-      "category": "Remeras"
+      "category": "Remeras",
+      "img": "../Public/remeravanlon.png"
+      
     },
     {
       "id": 4,
@@ -33,6 +38,8 @@
       "description":
         "Sweater Hombre talle L. ",
       "stock": 10,
-      "category": "Sweaters Vanlon"
+      "category": "Sweaters Vanlon",
+      "img": "../Public/vanlonhombre.jpg"
+      
     }
   ]
