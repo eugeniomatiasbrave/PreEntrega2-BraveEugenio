@@ -1,12 +1,30 @@
 import ItemDetail from "./ItemDetail";
-import { useState } from "react";
-import Productos1 from "../productos1.json";
-import { useParams } from "react-router";
+import { useState,useEffect } from "react";
+import {collection, getDocs,getFirestore } from "firebase/firestore";
+
+//import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
-  const { id } = useParams();
+ // const { id } = useParams();
   const [vanlon, setVanlon] = useState([]);
 
+
+  useEffect (()=> {
+    const db = getFirestore();
+    const Productos1Collection = collection (db, "Productos1");
+    getDocs(Productos1Collection).then((quierySnapshot)=>{
+      const Productos1= quierySnapshot.docs.map((doc)=>({
+        ...doc.data(), 
+        id: doc.id,
+      })); 
+      setVanlon(Productos1);
+
+    })
+    }, []);
+
+
+
+/*
   const getInfo = () => {
     return new Promise((resolve, reject) => {
       if (Productos1.length === 0) {
@@ -29,7 +47,10 @@ const ItemDetailContainer = () => {
   }
 
   fetchingInfo();
-  return <ItemDetail vanlon={Productos1} />;
+   */
+  return <ItemDetail vanlon={vanlon} />;
+
+ 
 };
 
 export default ItemDetailContainer;

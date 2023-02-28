@@ -1,5 +1,5 @@
 import { useState} from "react";
-import { Box,Button, Flex,Spacer,Text} from '@chakra-ui/react'
+import { Box,Button, Flex,Spacer,Text, Center} from '@chakra-ui/react'
 import "../main.css";
 
 const ItemCount = () => {
@@ -28,6 +28,11 @@ const ItemCount = () => {
    <Button variant='outline' colorScheme="red" size='sm' onClick={sumar}>+</Button>
    <Spacer/>
    <Button variant='outline' colorScheme="red" size='sm' onClick={resetear}>Reset</Button> 
+   <Center>
+     <Button variant="solid" colorScheme="red" size='sm'>
+        Comprar
+     </Button>
+   </Center>
   </Flex>
   </Box>
   </>

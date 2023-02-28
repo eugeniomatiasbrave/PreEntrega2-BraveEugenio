@@ -1,35 +1,31 @@
 import ItemList from "./ItemList";
-
-import Productos1 from "../productos1.json";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Heading, Center } from "@chakra-ui/react";
+import {collection, getDocs,getFirestore } from "firebase/firestore";
 
 
 const ItemListContainer = () => {
+
+
+  const [Productos1, setProductos1]= useState([]);
   const { category } = useParams();
 
-  const getInfo = () => {
-    return new Promise((resolve, reject) => {
-      if (Productos1.length === 0) {
-        reject(new Error("No hay datos"));
-      }
-      setTimeout(() => {
-        resolve(Productos1);
-      }, 2000);
-    });
-  };
+  useEffect (()=> {
+    const db = getFirestore();
+    const Productos1Collection = collection (db, "Productos1");
+    getDocs(Productos1Collection).then((quierySnapshot)=>{
+      const Productos1= quierySnapshot.docs.map((doc)=>({
+        ...doc.data(), 
+        id: doc.id,
+      })); 
+      setProductos1(Productos1);
 
-  async function fetchingInfo() {
-    try {
-      const datosFetched = await getInfo();
-   } catch (err) {
-      console.log(err);
-    }
-  }
+    })
+    }, []);
 
-  fetchingInfo();
+    const catFilter = Productos1.filter((vanlon) => vanlon.category === category);
 
-  const catFilter = Productos1.filter((vanlon) => vanlon.category === category);
   return (
     <div>
       <Center bg="gray.200" h="100px" color="gray.600">

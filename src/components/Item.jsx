@@ -1,5 +1,4 @@
 import React from "react";
-
 import {Center,Card,CardBody,Image,Heading,Text, Divider,Stack,CardFooter,Button,} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 

@@ -5,12 +5,12 @@ import NavBar from "./components/NavBar";
 
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
-//import CompraCartContext from "../context/CompraCartContext";
+import CartContextComp from "./context/CartContextComp";
 
 
 const App=() => {
   return (
-   // <CompraCartContext>
+   <CartContextComp>
      <BrowserRouter>
       <NavBar/>
        <Routes>
@@ -21,7 +21,7 @@ const App=() => {
         <Route exact path="/Cart" element={<Cart/>} />   
        </Routes>
      </BrowserRouter>
-   // </CompraCartContext>
+   </CartContextComp>
   );
 }
 

@@ -1,10 +1,11 @@
-//import { CartContext } from "../contexts/CompraCartContext";
-import { useState} from "react";
+//import { CartContext } from "../contexts/CartContext";
+import { useState, useContext} from "react";
 import {Container, Center, FormControl, Input, Text, Button} from '@chakra-ui/react'
 
 
 const Cart = () => {
   //const [cart, setCart] = useContext(CartContext);
+  
   const [nombre, setNombre] = useState("");
 
 const handleSubmit =(e)=>{
