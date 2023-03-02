@@ -1,10 +1,8 @@
 import React from 'react';
 import {Box,Flex} from '@chakra-ui/react';
 
-
-
-
 const CartWidget = () => {
+
   return (
   <>  
   <Box w="50px"  pt="2" pl="3" >

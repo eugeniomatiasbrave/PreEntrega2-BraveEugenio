@@ -2,15 +2,14 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Inicio from "./components/Inicio";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
-
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
-import CartContextComp from "./context/CartContextComp";
+import {CartContextProvider} from "./context/CartContextComp";
 
 
 const App=() => {
   return (
-   <CartContextComp>
+   <CartContextProvider>
      <BrowserRouter>
       <NavBar/>
        <Routes>
@@ -21,7 +20,7 @@ const App=() => {
         <Route exact path="/Cart" element={<Cart/>} />   
        </Routes>
      </BrowserRouter>
-   </CartContextComp>
+   </CartContextProvider>
   );
 }
 

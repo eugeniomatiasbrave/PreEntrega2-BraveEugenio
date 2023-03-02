@@ -1,19 +1,20 @@
-  import { useParams } from "react-router-dom";
-  import ItemCount from "./ItemCount";
-  import { Center,Card,CardBody,Image,Stack,Heading,Text,Button,CardFooter,Divider,} from "@chakra-ui/react";
-  import { useState, useEffect } from "react";
-  import {doc, getDoc,getFirestore } from "firebase/firestore";
 
-
+import ItemCount from "./ItemCount"; 
+import { useState, useEffect } from "react";
+import {doc, getDoc,getFirestore } from "firebase/firestore";
+import { Center,Card,CardBody,Image,Stack,Heading,Text,CardFooter,Divider,} from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
+  
   const ItemDetail = ({ vanlon }) => {
+
     const { id } = useParams();
 
-const [producto , setProducto ] = useState([])
+    const [producto , setProducto ] = useState([])
 
-  useEffect( ()=>{
-    const db = getFirestore();
+    useEffect (()=>{
+      const db = getFirestore();
 
-    const productos1Ref = doc( db, "Productos1",`${id}`);
+      const productos1Ref = doc( db, "Productos1",`${id}`);
 
     getDoc(productos1Ref).then((snapshot)=>{
 
@@ -25,39 +26,39 @@ const [producto , setProducto ] = useState([])
     });
   }, []);
 
-  const vanlonFilter = vanlon.filter((vanlon) => vanlon.id == id);
+  const vanlonFilter = vanlon.filter((van) => van.id == id);
     return (
       <>
-        {vanlonFilter.map((vanlon) => (
-          <div key={vanlon.id}>
+        {vanlonFilter.map((van) => (
+          <div key={van.id}>
             <Center p="1rem">
               <Card>
                 <CardBody>
-                  <Image   borderRadius="lg" src={vanlon.img} />
+                  <Image   borderRadius="lg" src={van.img} />
                   <Stack mt="6" spacing="3">
-                    <Heading size="md">{vanlon.name}</Heading>
+                    <Heading size="md">{van.name}</Heading>
                     <Text color="red.800" fontSize="l">
-                      Descripcion: {vanlon.description}
+                      Descripcion: {van.description}
                     </Text>
                     <Text color="red.800" fontSize="l">
-                      Categoria: {vanlon.category}
+                      Categoria: {van.category}
                     </Text>
                     <Text color="red.600" fontSize="xl">
-                      Stock: {vanlon.stock}
+                      Stock: {van.stock}
                     </Text>
                     <Text color="green.600" fontSize="xl">
-                      Precio: ${vanlon.price}
+                      Precio: ${van.price}
                     </Text>
                   </Stack>
                 </CardBody>
                 <Divider/>
                 <CardFooter>
-                  <ItemCount 
-                  stock={vanlon.stock}
-                  id={vanlon.id}
-                  price={vanlon.price}
-                  name={vanlon.name}
-                   />
+                  
+                <ItemCount 
+                  stock={van.stock}
+                  id={van.id}
+                  price={van.price}
+                  name={van.name}/>
                   
                 </CardFooter>
               </Card>
