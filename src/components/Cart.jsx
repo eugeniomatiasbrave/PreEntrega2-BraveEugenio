@@ -1,30 +1,44 @@
-//import { CartContext } from "../context/CartContext";
-import { useState} from "react";
-import {Container, Center, FormControl, Input, Text, Button} from '@chakra-ui/react'
+import { CartContext } from "../context/CartContextComp";
+import { useState, useContext} from "react";
+import {Container, Center, Card, Text, Button, CardBody, Image, Box} from '@chakra-ui/react'
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
-  //const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart, deleteCart ] = useContext(CartContext);
+
   
-const [nombre, setNombre] = useState(""); // estado y llamdo del formulario
-    const handleSubmit =(e)=>{
-      console.log(nombre);
-      e.preventDefault();
-      };
+
 
   return (     
-<>
-<Container>
- <Text>Fomulario</Text>
-  <Center w="600 px" bg="gray.100" borderWidth='4px'>
-    <FormControl >
-     <Input bg="whait" type="text" onChange={(e)=> {  setNombre (e.target.value)  } } />
-     <Button  type='submit' onClick={handleSubmit} colorScheme='teal' size='sm'>Enviar</Button>
-    </FormControl>
-  </Center>
-</Container>
-</>
-  );
-};
-
+     <>
+     <Container >
+      <Text>Mi Carrito</Text>
+        {cart.map((vln)=>{
+           return(
+             <Container key={vln.id}>
+               <Center p="1rem">
+                 <Card>
+                  <CardBody >
+                   <Image borderRadius="lg" src={vln.img} /> 
+                   <Text color="gray.600" fontSize="xxl"> {vln.name}</Text>          
+                   <Text color="gray.600" fontSize="xl"> Precio: ${vln.price}   </Text>
+                   <Text color="blue.800" fontSize="l" > Descripcion: {vln.description}</Text>
+                   <Text color= "red.600" fontSize="xl"> Agregado: {vln.cantidad}   </Text>     
+                  </CardBody>
+                 </Card>
+               </Center>
+             </Container>
+             )})} 
+              <Box>
+                 <Link to={"/catalogo"}>
+                   <Button  variant="solid" colorScheme="red" size='sm' onClick={deleteCart}
+                      >Vaciar Carrito
+                   </Button>   
+                 </Link>
+              </Box>
+            </Container>
+            </> 
+            )};
+          
 export default Cart;

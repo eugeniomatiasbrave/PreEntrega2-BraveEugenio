@@ -5,7 +5,7 @@ import {doc, getDoc,getFirestore } from "firebase/firestore";
 import { Center,Card,CardBody,Image,Stack,Heading,Text,CardFooter,Divider,} from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
   
-  const ItemDetail = ({ vanlon }) => {
+  const ItemDetail = ({ vanlon2 }) => {
 
     const { id } = useParams();
 
@@ -26,7 +26,7 @@ import { useParams } from "react-router-dom";
     });
   }, []);
 
-  const vanlonFilter = vanlon.filter((van) => van.id == id);
+  const vanlonFilter = vanlon2.filter((van) => van.id == id);
     return (
       <>
         {vanlonFilter.map((van) => (
@@ -58,7 +58,10 @@ import { useParams } from "react-router-dom";
                   stock={van.stock}
                   id={van.id}
                   price={van.price}
-                  name={van.name}/>
+                  name={van.name}
+                  img={van.img}
+                  description={van.description}
+                  />
                   
                 </CardFooter>
               </Card>

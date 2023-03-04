@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
     }, []);
 
 
-  return <ItemDetail vanlon={vanlon} />;
+  return <ItemDetail vanlon2={vanlon} />;
 };
 
 export default ItemDetailContainer;

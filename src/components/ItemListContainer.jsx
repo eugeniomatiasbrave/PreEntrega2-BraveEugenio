@@ -4,9 +4,7 @@ import { useParams } from "react-router-dom";
 import { Heading, Center } from "@chakra-ui/react";
 import {collection, getDocs,getFirestore } from "firebase/firestore";
 
-
 const ItemListContainer = () => {
-
 
   const [Productos1, setProductos1]= useState([]);
   const { category } = useParams();
@@ -20,7 +18,6 @@ const ItemListContainer = () => {
         id: doc.id,
       })); 
       setProductos1(Productos1);
-
     })
     }, []);
 
@@ -33,12 +30,9 @@ const ItemListContainer = () => {
           CATALOGO DE PRODUCTOS
         </Heading>
       </Center>
-      {category ? <ItemList vanlon={catFilter} /> : <ItemList vanlon={Productos1} />}
-      
-    </div>
-    
+      {category ? <ItemList vanlon={catFilter} /> : <ItemList vanlon={Productos1} />}  
+    </div> 
   );
- 
 };
 
 export default ItemListContainer;

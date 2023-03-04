@@ -1,9 +1,11 @@
 import  { useState, useContext} from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContextComp";
 import { Container, Box,Button, Flex,Spacer,Text, Center} from '@chakra-ui/react'
 import "../main.css";
 
-const ItemCount = ({ id, stock, price, name }) => {
+
+const ItemCount = ({ id, stock, price, name, img , description}) => {
 
   const [cuenta, setCuenta] = useState(0);
   const [cart, setCart] = useContext(CartContext);
@@ -26,35 +28,37 @@ const ItemCount = ({ id, stock, price, name }) => {
       if (encontrado) {
         return paraAgregar.map((vln) => {
           if (vln.id === id) {
-            return { ...vln, cantidad: vln.cantidad + cuenta };
+            return { ...vln, cantidad: vln.stock + cuenta };
           } else {
             return vln;
           }
         });
       } else {
-        return [...encontrado, { id, cantidad: cuenta, price, name }];
+        return [...paraAgregar, { id, cantidad: cuenta, price, name, img, description }];
       }
     });
- 
         };
- 
+
   return (
   <>
   <Container>
-  <Box borderWidth='1px' w={232}>
-  <Flex maxW={230}>
+  <Box borderWidth='1px' w={350}>
+  <Flex maxW={350}>
   <Button variant='outline' colorScheme="red" size='sm' isDisabled={cuenta < 1} onClick={()=>restar()}>-</Button>
   <Spacer/>
   <Text>{cuenta}</Text>
    <Spacer/>
-   <Button variant='outline' colorScheme="red" size='sm' onClick={()=>sumar()}>+</Button>
+   <Button variant='outline' colorScheme="red" size='sm' isDisabled={cuenta > stock} onClick={()=>sumar()}>+</Button>
    <Spacer/>
-   <Button variant='outline' colorScheme="red" size='sm' onClick={()=>resetear()}>Reset</Button> 
-   <Center>
-     <Button  onClick={()=> Agregar()} variant="solid" colorScheme="red" size='sm'>
-        Agregar
+   <Button variant='outline' colorScheme="red" size='sm' onClick={()=>resetear()}>Reset</Button>  
+   <Spacer/>
+     <Button isDisabled={cuenta > stock} onClick={()=> Agregar()} variant="solid" colorScheme="red" size='sm'>
+        Agregar: {cuenta}
      </Button>
-   </Center>
+     <Spacer/>
+     <Link to={"/catalogo"}>
+       <Button variant='outline' colorScheme="red" size='sm'>Volver</Button>
+     </Link>
   </Flex>
   </Box>
   </Container>
