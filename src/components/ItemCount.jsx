@@ -1,7 +1,7 @@
 import  { useState, useContext} from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContextComp";
-import { Container, Box,Button, Flex,Spacer,Text, Center} from '@chakra-ui/react'
+import { Container, Box,Button, Flex,Spacer,Text} from '@chakra-ui/react'
 import "../main.css";
 
 
@@ -20,24 +20,23 @@ const ItemCount = ({ id, stock, price, name, img , description}) => {
         setCuenta (0)
         };
 
-
-  const Agregar = ()=>{
-
-    setCart((paraAgregar) => {
-      const encontrado= paraAgregar.find((vln) => vln.id === id); 
-      if (encontrado) {
-        return paraAgregar.map((vln) => {
-          if (vln.id === id) {
-            return { ...vln, cantidad: vln.stock + cuenta };
-          } else {
-            return vln;
-          }
-        });
-      } else {
-        return [...paraAgregar, { id, cantidad: cuenta, price, name, img, description }];
-      }
-    });
-        };
+        const Agregar = ()=>{
+          setCart((paraAgregar) => {
+           const encontrado= paraAgregar.find((vln) => vln.id === id); 
+           if (encontrado) {
+             return paraAgregar.map((vln) => {
+               if (vln.id === id) {
+                 return { ...vln, cantidad: vln.stock + cuenta };
+               } else {
+                 return vln;
+               }
+             });
+           } else {
+             return [...paraAgregar, { id, cantidad: cuenta, price, name, img, description }];
+           }
+         });
+             }; 
+  
 
   return (
   <>
@@ -52,7 +51,7 @@ const ItemCount = ({ id, stock, price, name, img , description}) => {
    <Spacer/>
    <Button variant='outline' colorScheme="red" size='sm' onClick={()=>resetear()}>Reset</Button>  
    <Spacer/>
-     <Button isDisabled={cuenta > stock} onClick={()=> Agregar()} variant="solid" colorScheme="red" size='sm'>
+     <Button isDisabled={cuenta > stock} onClick={()=>Agregar()} variant="solid" colorScheme="red" size='sm'>
         Agregar: {cuenta}
      </Button>
      <Spacer/>
