@@ -14,7 +14,7 @@ import { useParams } from "react-router-dom";
     useEffect (()=>{
       const db = getFirestore();
 
-      const productos1Ref = doc( db, "Productos1",`${id}`);
+      const productos1Ref = doc( db, "Productos1",`${id}`); 
 
     getDoc(productos1Ref).then((snapshot)=>{
 
