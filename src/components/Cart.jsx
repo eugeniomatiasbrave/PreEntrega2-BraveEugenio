@@ -74,6 +74,11 @@ return(
         </Tr>
     </Tbody>
     </Table>
+
+<Link to={"/Checkout"}>
+    <Button>
+      Finalizar Compra
+    </Button></Link>
     </>
    )
  };
