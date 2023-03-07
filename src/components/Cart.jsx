@@ -1,21 +1,32 @@
 import { CartContext } from "../context/CartContextComp";
-import { useContext} from "react";
-import { Button, Image,Table,Thead,Tr,Tbody,Td,Th} from '@chakra-ui/react'
+import { useContext, useState} from "react";
+import { Button, Image,Table,Thead,Tr,Tbody,Td,Th, Box} from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 
 
 const Cart = () => {
   const [cart, setCart, borrarCarrito , borrarUno] = useContext(CartContext);
 
-  const cartTotal = () => {
+  const unidadTotal = () => {
     return cart.reduce((total, vln) => total += vln.cantidad, 0)
 }
 
-const sumTotal = () => {
+const sumaTotal = () => {
     return cart.reduce((total, vln) => total += vln.cantidad * vln.price, 0)
 };
 
-  return (        
+
+  if(unidadTotal() === 0) {
+    Swal.fire({
+      icon: 'error',
+      title: 'El carrito se encuentra vacio', 
+      backdrop: true,
+      confirmButtonText: '<a href="/catalogo">Volver</a>',
+      confirmButtonColor:'rgb(235, 60, 150)',
+    })
+}; 
+
+return(        
   <>
   <Table>
     <Thead>
@@ -45,8 +56,8 @@ const sumTotal = () => {
         <Td></Td>
         <Td></Td>
         <Td></Td>
-        <Td>Total Unidades: {cartTotal()}</Td>
-        <Td>Suma Total: ${sumTotal()}</Td>
+        <Td>Total Unidades: {unidadTotal()}</Td>
+        <Td>Suma Total: ${sumaTotal()}</Td>
         <Td></Td>
       </Tr>
       <Tr> 
