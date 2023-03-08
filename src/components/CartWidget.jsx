@@ -11,6 +11,8 @@ const CartWidget = () => {
      return a + b.cantidad;
   }, 0 );
 
+
+
   return (
   <>  
   <Box w="50px"  pt="2" pl="3" >
