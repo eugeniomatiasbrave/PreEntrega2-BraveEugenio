@@ -1,11 +1,14 @@
 Proyecto Final Curso React JS Coderhouse
 
-Es un E-Commerce Susan Flo Swaeters ficticio que realiza la venta de sweaters Vanlon, marca muy popular 
-por su calidad y suavidad en el mercado en un segmento de 50 años en adelante.
+El E-Commerce Susan Flo Swaeters ficticio que realiza la venta de sweaters Vanlon, marca muy popular 
+por su calidad y suavidad en el mercado.
 
 Se utilizo:
 
--Servicio Firebase, usando Firestore para base de datos dinamica
+-Servicio Firebase, usando Firestore para base de datos dinamica NoSQL
+
+![coder](https://user-images.githubusercontent.com/107762123/223607822-61186c0b-8f5f-4c30-b5f3-1045d660fd87.png)
+
 
 -Chakcra UI (libreria) y sweat alert
 
