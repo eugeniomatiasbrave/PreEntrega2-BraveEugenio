@@ -9,7 +9,10 @@ Se utilizo:
 
 La imagen de firstore se tomo de la collection y documento , detalla los id, nombre , mail y telefono , asi como suma total. No prestar atencion a los caracteres son de prueba
 
-![coder](https://user-images.githubusercontent.com/107762123/223607822-61186c0b-8f5f-4c30-b5f3-1045d660fd87.png)
+
+
+![image](https://user-images.githubusercontent.com/107762123/223608530-304f1b59-dc3e-4b4d-a974-37ae7c939e2d.png)
+
 
 
 -Chakcra UI (libreria) y sweat alert
