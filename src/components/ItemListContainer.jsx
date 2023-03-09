@@ -2,26 +2,25 @@ import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Heading, Center } from "@chakra-ui/react";
-import {collection, getDocs,getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemListContainer = () => {
-
-  const [Productos1, setProductos1]= useState([]);
+  const [Productos1, setProductos1] = useState([]);
   const { category } = useParams();
 
-  useEffect (()=> {
+  useEffect(() => {
     const db = getFirestore();
-    const Productos1Collection = collection (db, "Productos1");
-    getDocs(Productos1Collection).then((quierySnapshot)=>{
-      const Productos1= quierySnapshot.docs.map((doc)=>({
-        ...doc.data(), 
+    const Productos1Collection = collection(db, "Productos1");
+    getDocs(Productos1Collection).then((quierySnapshot) => {
+      const Productos1 = quierySnapshot.docs.map((doc) => ({
+        ...doc.data(),
         id: doc.id,
-      })); 
+      }));
       setProductos1(Productos1);
-    })
-    }, []);
+    });
+  }, []);
 
-    const catFilter = Productos1.filter((vanlon) => vanlon.category === category);
+  const catFilter = Productos1.filter((vanlon) => vanlon.category === category);
 
   return (
     <div>
@@ -30,8 +29,12 @@ const ItemListContainer = () => {
           CATALOGO DE PRODUCTOS
         </Heading>
       </Center>
-      {category ? <ItemList vanlon={catFilter} /> : <ItemList vanlon={Productos1} />}  
-    </div> 
+      {category ? (
+        <ItemList vanlon={catFilter} />
+      ) : (
+        <ItemList vanlon={Productos1} />
+      )}
+    </div>
   );
 };
 

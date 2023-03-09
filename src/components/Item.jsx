@@ -1,7 +1,17 @@
 import React from "react";
-import {Center,Card,CardBody,Image,Heading,Text, Divider,Stack,CardFooter,Button,} from "@chakra-ui/react";
+import {
+  Center,
+  Card,
+  CardBody,
+  Image,
+  Heading,
+  Text,
+  Divider,
+  Stack,
+  CardFooter,
+  Button,
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
 
 const Item = ({ id, name, price, stock, category, img, description }) => {
   return (
@@ -9,7 +19,7 @@ const Item = ({ id, name, price, stock, category, img, description }) => {
       <div key={id}>
         <Center p="1rem">
           <Card>
-            <CardBody >
+            <CardBody>
               <Image borderRadius="lg" src={img} />
               <Stack mt="6" spacing="3">
                 <Heading size="md">{name}</Heading>
@@ -30,7 +40,7 @@ const Item = ({ id, name, price, stock, category, img, description }) => {
             <Divider />
             <CardFooter>
               <Center>
-                <Button variant="solid" colorScheme="red" size='sm'>
+                <Button variant="solid" colorScheme="red" size="sm">
                   <Link to={`/item/${id}`}>Ver Producto</Link>
                 </Button>
               </Center>
