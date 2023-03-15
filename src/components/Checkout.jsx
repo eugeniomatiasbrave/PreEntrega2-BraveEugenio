@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Container,
   Input,
@@ -28,6 +27,7 @@ const Checkout = () => {
       const db = getFirestore();
       const ordersCollection = collection(db, "orders");
       addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
+     
     }
   };
 

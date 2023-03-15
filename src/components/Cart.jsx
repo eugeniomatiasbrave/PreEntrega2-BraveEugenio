@@ -1,16 +1,6 @@
 import { CartContext } from "../context/CartContextComp";
 import { useContext, useState } from "react";
-import {
-  Button,
-  Image,
-  Table,
-  Thead,
-  Tr,
-  Tbody,
-  Td,
-  Th,
-  Center,
-} from "@chakra-ui/react";
+import {Button,Image,Table,Thead,Tr,Tbody,Td,Th,Center} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Cart = () => {

@@ -1,7 +1,9 @@
-import { createContext, useState } from "react";
+import {createContext} from "react";
 export const CartContext = createContext();
+import {useState} from "react";
 
-export const CartContextProvider = ({ children }) => {
+
+  const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const borrarUno = (id) => {
