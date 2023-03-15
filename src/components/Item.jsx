@@ -1,15 +1,4 @@
-import {
-  Center,
-  Card,
-  CardBody,
-  Image,
-  Heading,
-  Text,
-  Divider,
-  Stack,
-  CardFooter,
-  Button,
-} from "@chakra-ui/react";
+import {Center,Card,CardBody,Image,Heading,Text,Divider,Stack,CardFooter,Button} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Item = ({ id, name, price, stock, category, img, description }) => {

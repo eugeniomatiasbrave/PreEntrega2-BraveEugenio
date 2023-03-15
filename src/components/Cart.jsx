@@ -4,15 +4,13 @@ import {Button,Image,Table,Thead,Tr,Tbody,Td,Th,Center} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const [cart, setCart, borrarCarrito, borrarUno] = useContext(CartContext);
+  const [cart, setCart, borrarCarrito, borrarUno, sumaTotal] = useContext(CartContext);
 
   const unidadTotal = () => {
     return cart.reduce((total, vln) => (total += vln.cantidad), 0);
   };
 
-  const sumaTotal = () => {
-    return cart.reduce((total, vln) => (total += vln.cantidad * vln.price), 0);
-  };
+ 
 
   if (unidadTotal() === 0) {
     Swal.fire({

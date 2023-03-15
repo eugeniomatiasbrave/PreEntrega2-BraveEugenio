@@ -14,8 +14,13 @@ import {useState} from "react";
     setCart([]);
   };
 
+  const sumaTotal = () => {
+    return cart.reduce((total, vln) => (total += vln.cantidad * vln.price), 0);
+  };
+  
+
   return (
-    <CartContext.Provider value={[cart, setCart, borrarCarrito, borrarUno]}>
+    <CartContext.Provider value={[cart, setCart, borrarCarrito, borrarUno, sumaTotal]}>
       {children}
     </CartContext.Provider>
   );

@@ -16,7 +16,7 @@ const Checkout = () => {
   const [telefono, setTelefono] = useState("");
   const [email, setEmail] = useState("");
   const [orderId, setOrderId] = useState("");
-  const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart, setCuenta, cantidad, sumaTotal] = useContext(CartContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,13 +31,19 @@ const Checkout = () => {
     }
   };
 
+  if(orderId) { setCuenta(0)} else {
+    {cantidad};
+  }
+
   const order = {
     usuario: { nombre, telefono, email },
     productos: cart.map((vln) => ({
       id: vln.id,
-      precio_total: vln.cantidad * vln.price,
-    })),
+      total_x_Art: vln.cantidad * vln.price  })),
+      SumaTotal: '$ ' + sumaTotal ()
+      
   };
+
 
   return (
     <>
