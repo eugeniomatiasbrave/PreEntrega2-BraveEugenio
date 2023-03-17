@@ -12,13 +12,13 @@ const Cart = () => {
 
  
 
-  if (unidadTotal() === 0) {
+  if (sumaTotal() === 0) {
     Swal.fire({
       icon: "error",
       title: "El carrito se encuentra vacio",
       backdrop: true,
       confirmButtonText: '<a href="/catalogo">Volver</a>',
-      confirmButtonColor: "rgb(235, 60, 150)",
+      confirmButtonColor: "rgb(197, 48, 48)",
     });
   }
 

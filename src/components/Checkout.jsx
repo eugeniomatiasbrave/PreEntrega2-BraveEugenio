@@ -26,10 +26,9 @@ const Checkout = () => {
     } else {
       const db = getFirestore();
       const ordersCollection = collection(db, "orders");
-      addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
-     
+      addDoc(ordersCollection, order).then(({ id }) => setOrderId(id)); 
     }
-  };
+      };
 
   if(orderId) { setCuenta(0)} else {
     {cantidad};
@@ -44,11 +43,10 @@ const Checkout = () => {
       
   };
 
-
   return (
     <>
       <Container>
-        <Text fontSize="2xl">Fomulario</Text>
+        <Text fontSize="2xl">Completa el Fomulario para confirmar la compra</Text>
         <Center w="600 px" bg="gray.100" borderWidth="2px">
           <FormControl m={3}>
             <FormLabel>Nombre</FormLabel>
@@ -81,29 +79,30 @@ const Checkout = () => {
             <Button
               m={4}
               type="submit"
-              onClick={handleSubmit}
+              onClick= {handleSubmit}
               variant="solid"
               colorScheme="red"
               size="sm"
             >
-              Enviar y confirmar Compra
+              Enviar y confirmar Compra       
             </Button>
           </FormControl>
         </Center>
       </Container>
       <Center>
-        <Text m={3} fontSize="xl">
-          Compra Confirmada:{" "}
-        </Text>
-      </Center>
-      <Center>
-        <Text as="b" m={3} fontSize="xl">
-          Order ID:{" "}
-        </Text>
-        <Text fontSize="xl">{orderId}</Text>
-      </Center>
+      {orderId !== "" ? Swal.fire({
+       icon: 'success',
+       title:'Orden Confirmada',
+       text: 'ID: ' + orderId,
+       backdrop: true,
+       confirmButtonText: '<a href="/catalogo" style="text-decoration: none; color: white" >Volver</a>',
+       confirmButtonColor: "rgb(197, 48, 48)",
+      })  : "" }   
+
+      </Center>   
     </>
-  );
+  ); 
+ 
 };
 
 export default Checkout;
