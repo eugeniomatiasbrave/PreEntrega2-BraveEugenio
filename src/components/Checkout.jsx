@@ -76,7 +76,12 @@ const Checkout = () => {
                 setEmail(e.target.value);
               }}
             />
-            <Button
+           
+          </FormControl>
+          
+        </Center>
+
+        <Button
               m={4}
               type="submit"
               onClick= {handleSubmit}
@@ -86,9 +91,9 @@ const Checkout = () => {
             >
               Enviar y confirmar Compra       
             </Button>
-          </FormControl>
-        </Center>
+
       </Container>
+
       <Center>
       {orderId !== "" ? Swal.fire({
        icon: 'success',

@@ -2,6 +2,7 @@ import { CartContext } from "../context/CartContextComp";
 import { useContext, useState } from "react";
 import {Button,Image,Table,Thead,Tr,Tbody,Td,Th,Center} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Checkout from "./Checkout";
 
 const Cart = () => {
   const [cart, setCart, borrarCarrito, borrarUno, sumaTotal] = useContext(CartContext);
@@ -9,8 +10,6 @@ const Cart = () => {
   const unidadTotal = () => {
     return cart.reduce((total, vln) => (total += vln.cantidad), 0);
   };
-
- 
 
   if (sumaTotal() === 0) {
     Swal.fire({
@@ -93,12 +92,9 @@ const Cart = () => {
           </Tr>
         </Tbody>
       </Table>
+      
       <Center>
-        <Link to={"/Checkout"}>
-          <Button variant="solid" colorScheme="red" size="sm">
-            Comprar
-          </Button>
-        </Link>
+        <Checkout/>
       </Center>
     </>
   );
