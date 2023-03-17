@@ -22,3 +22,16 @@
 .fila-carrito {
     height: 100px;
 }
+
+.footer {
+    background-color: rgb(197, 48, 48);
+    color: white;
+    text-align: center;
+    height: 40px;
+    padding: 10px 0px 10px 0px ;
+}
+
+.footer p {
+    padding-bottom: 10px;
+    background-color: rgb(197, 48, 48) ;
+}
