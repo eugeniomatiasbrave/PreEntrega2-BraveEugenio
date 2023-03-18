@@ -1,12 +1,12 @@
-import {Center,Card,CardBody,Image,Heading,Text,Divider,Stack,CardFooter,Button} from "@chakra-ui/react";
+import {Center,Card,CardBody,Image,Heading,Text,Divider,Stack,CardFooter,Button, Box} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Item = ({ id, name, price, stock, category, img, description }) => {
   return (
-    <div>
-      <div key={id}>
-        <Center p="1rem">
-          <Card>
+    <Box >
+      <Box key={id}  >
+        <Center ml="3.5rem" my="1rem" >
+          <Card w='300px' h='680px' boxShadow='2xl'>
             <CardBody>
               <Image borderRadius="lg" src={img} />
               <Stack mt="6" spacing="3">
@@ -35,8 +35,8 @@ const Item = ({ id, name, price, stock, category, img, description }) => {
             </CardFooter>
           </Card>
         </Center>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

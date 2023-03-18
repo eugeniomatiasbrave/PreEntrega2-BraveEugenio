@@ -11,6 +11,7 @@ import {
   Text,
   CardFooter,
   Divider,
+  Box,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
@@ -36,12 +37,15 @@ const ItemDetail = ({ vanlon2 }) => {
   const vanlonFilter = vanlon2.filter((van) => van.id == id);
   return (
     <>
+
       {vanlonFilter.map((van) => (
         <div key={van.id}>
           <Center p="1rem">
-            <Card>
-              <CardBody>
-                <Image borderRadius="lg" src={van.img} />
+            <Card boxShadow='2xl' w="350px">
+              <CardBody >
+                <Box>
+                  <Image h='300px' borderRadius="lg" src={van.img} />
+                </Box>
                 <Stack mt="6" spacing="3">
                   <Heading size="md">{van.name}</Heading>
                   <Text color="red.800" fontSize="l">

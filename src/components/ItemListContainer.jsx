@@ -1,7 +1,7 @@
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Heading, Center } from "@chakra-ui/react";
+import { Heading, Center, Box } from "@chakra-ui/react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemListContainer = () => {
@@ -23,18 +23,20 @@ const ItemListContainer = () => {
   const catFilter = Productos1.filter((vanlon) => vanlon.category === category);
 
   return (
-    <div>
+    <Box>
       <Center bg="gray.200" h="100px" color="gray.600">
         <Heading as="h5" size="xl">
           CATALOGO DE PRODUCTOS
         </Heading>
       </Center>
+      <Center>
       {category ? (
         <ItemList vanlon={catFilter} />
       ) : (
         <ItemList vanlon={Productos1} />
       )}
-    </div>
+      </Center>
+    </Box>
   );
 };
 

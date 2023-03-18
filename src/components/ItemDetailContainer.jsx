@@ -1,6 +1,7 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { Center } from "@chakra-ui/react";
 
 const ItemDetailContainer = () => {
   const [vanlon, setVanlon] = useState([]);
@@ -17,7 +18,11 @@ const ItemDetailContainer = () => {
     });
   }, []);
 
-  return <ItemDetail vanlon2={vanlon} />;
+  return (
+  <Center>
+    <ItemDetail vanlon2={vanlon} />
+  </Center>
+  )
 };
 
 export default ItemDetailContainer;

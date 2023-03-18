@@ -40,9 +40,9 @@ const ItemCount = ({ id, stock, price, name, img, description }) => {
 
   return (
     <>
-      <Container>
-        <Box borderWidth="1px" w={350}>
-          <Flex maxW={350}>
+      
+        <Box borderWidth="1px" w={340}>
+          <Flex maxW={339}>
             <Button
               variant="outline"
               colorScheme="red"
@@ -91,7 +91,7 @@ const ItemCount = ({ id, stock, price, name, img, description }) => {
             </Link>
           </Flex>
         </Box>
-      </Container>
+      
     </>
   );
 };

@@ -100,8 +100,12 @@ const Checkout = () => {
        title:'Orden Confirmada',
        text: 'ID: ' + orderId,
        backdrop: true,
-       confirmButtonText: '<a href="/catalogo" style="text-decoration: none; color: white" >Volver</a>',
+       showCancelButton: true,
+       cancelButtonText: '<a href="/catalogo" style="text-decoration: none; color: white" >Volver</a>',
+       confirmButtonText: 'Comprar',
        confirmButtonColor: "rgb(197, 48, 48)",
+       cancelButtonColor: "rgb(145, 146, 148)",
+       showconfirmButton: true,
       })  : "" }   
 
       </Center>   
