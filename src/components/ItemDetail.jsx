@@ -46,20 +46,20 @@ const ItemDetail = ({ vanlon2 }) => {
                 <Box>
                   <Image h='300px' borderRadius="lg" src={van.img} />
                 </Box>
-                <Stack mt="6" spacing="3">
+                <Stack mt="6" spacing="1.5">
                   <Heading size="md">{van.name}</Heading>
-                  <Text color="red.800" fontSize="l">
+                  <Text fontSize="l">
                     Descripcion: {van.description}
                   </Text>
-                  <Text color="red.800" fontSize="l">
+                  <Text fontSize="l">
                     Categoria: {van.category}
                   </Text>
-                  <Text color="red.600" fontSize="xl">
+                  <Text fontSize="l">
                     Stock: {van.stock}
                   </Text>
-                  <Text color="green.600" fontSize="xl">
+                  <Heading color="gray.600" fontSize="xl">
                     Precio: ${van.price}
-                  </Text>
+                  </Heading>
                 </Stack>
               </CardBody>
               <Divider />

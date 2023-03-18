@@ -66,8 +66,8 @@ const Cart = () => {
             <Td></Td>
             <Td></Td>
             <Td></Td>
-            <Td>Total Unidades: {unidadTotal()}</Td>
-            <Td>Suma Total: ${sumaTotal()}</Td>
+            <Th color="gray.800" fontSize="sm">Total Uds: {unidadTotal()}</Th>
+            <Th color="gray.800" fontSize="sm">Suma Total: ${sumaTotal()}</Th>
             <Td></Td>
           </Tr>
           <Tr>

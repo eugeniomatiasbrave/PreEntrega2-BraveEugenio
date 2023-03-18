@@ -91,9 +91,7 @@ const Checkout = () => {
             >
               Enviar y confirmar Compra       
             </Button>
-
       </Container>
-
       <Center>
       {orderId !== "" ? Swal.fire({
        icon: 'success',
@@ -107,7 +105,6 @@ const Checkout = () => {
        cancelButtonColor: "rgb(145, 146, 148)",
        showconfirmButton: true,
       })  : "" }   
-
       </Center>   
     </>
   ); 
