@@ -1,20 +1,23 @@
 import {
-  Container,
+ Box,
   Input,
   Button,
   Text,
   Center,
   FormControl,
   FormLabel,
+  Container,
+  Textarea
 } from "@chakra-ui/react";
 import { useState, useContext } from "react";
-import { collection, getFirestore, addDoc, getDoc } from "firebase/firestore";
+import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { CartContext } from "../context/CartContextComp";
 
 const Checkout = () => {
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
   const [email, setEmail] = useState("");
+  const [mensaje, setMensaje] = useState("");
   const [orderId, setOrderId] = useState("");
   const [cart, setCart, setCuenta, cantidad, sumaTotal] = useContext(CartContext);
 
@@ -35,7 +38,7 @@ const Checkout = () => {
   }
 
   const order = {
-    usuario: { nombre, telefono, email },
+    usuario: { nombre, telefono, email, mensaje },
     productos: cart.map((vln) => ({
       id: vln.id,
       total_x_Art: vln.cantidad * vln.price  })),
@@ -45,13 +48,15 @@ const Checkout = () => {
 
   return (
     <>
-      <Container>
-        <Text fontSize="2xl">Completa el Fomulario para confirmar la compra</Text>
-        <Center w="600 px" bg="gray.100" borderWidth="2px">
-          <FormControl m={3}>
-            <FormLabel>Nombre</FormLabel>
+    <Container maxW='container.sm' my="40px" centerContent>
+       <Box my="10px">
+           <Text fontSize="xl">COMPLETA EL FORMULARIO PARA CONFIRMAR LA COMPRA</Text>
+         </Box>
+         
+          <FormControl  borderWidth="1px" p="15px" >
+            <FormLabel size='sm' >Nombre</FormLabel>
             <Input
-              size="lg"
+              placeholder='nombre y apellido' size='md'
               bg="whait"
               type="text"
               onChange={(e) => {
@@ -60,7 +65,7 @@ const Checkout = () => {
             />
             <FormLabel>Telefono</FormLabel>
             <Input
-              size="lg"
+              placeholder='telefono' size='md'
               bg="whait"
               type="text"
               onChange={(e) => {
@@ -69,18 +74,24 @@ const Checkout = () => {
             />
             <FormLabel>E-mail</FormLabel>
             <Input
-              size="lg"
+              placeholder='e-mail' size='md'
               bg="whait"
               type="text"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
-            />
-           
-          </FormControl>
-          
-        </Center>
-
+            />   
+            <FormLabel>Mensaje Opcional</FormLabel> 
+            <Textarea placeholder='Mensaje' size='md'
+              bg="whait"
+              type="text"
+              onChange={(e) => {
+                setMensaje(e.target.value);
+              }} 
+              />  
+          </FormControl>  
+        
+        
         <Button
               m={4}
               type="submit"
@@ -91,11 +102,11 @@ const Checkout = () => {
             >
               Enviar y confirmar Compra       
             </Button>
-      </Container>
+      
       <Center>
       {orderId !== "" ? Swal.fire({
        icon: 'success',
-       title:'Orden Confirmada',
+       title:'Muchas Gracias Orden Confirmada',
        text: 'ID: ' + orderId,
        backdrop: true,
        showCancelButton: true,
@@ -106,6 +117,7 @@ const Checkout = () => {
        showconfirmButton: true,
       })  : "" }   
       </Center>   
+      </Container>
     </>
   ); 
  

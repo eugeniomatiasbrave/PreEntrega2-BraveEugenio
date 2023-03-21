@@ -1,6 +1,6 @@
 import { CartContext } from "../context/CartContextComp";
-import { useContext, useState } from "react";
-import {Button,Image,Table,Thead,Tr,Tbody,Td,Th,Center} from "@chakra-ui/react";
+import { useContext } from "react";
+import {Button,Image,Table,Thead,Tr,Tbody,Td,Th,Center, Text, Container} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
 
@@ -23,7 +23,18 @@ const Cart = () => {
 
   return (
     <>
-      <Table>
+    
+    
+    <Center  bg="white" h="80px" color="gray.700" borderBottom='1px' borderColor='gray.500'>
+       <Text  fontSize='3xl'>TU CARRITO DE COMPRAS !!!</Text>
+      </Center>
+     
+      <Container maxW='container.l' my="40px" centerContent>
+    
+      <Center my="10px">
+           <Text fontSize="xl">PRODUCTOS AGREGADOS</Text>
+         </Center>
+      <Table w="900 px">
         <Thead>
           <Tr>
             <Th>Imagen</Th>
@@ -66,7 +77,7 @@ const Cart = () => {
             <Td></Td>
             <Td></Td>
             <Td></Td>
-            <Th color="gray.800" fontSize="sm">Total Uds: {unidadTotal()}</Th>
+            <Th color="gray.800" fontSize="sm">Total Art.: {unidadTotal()}</Th>
             <Th color="gray.800" fontSize="sm">Suma Total: ${sumaTotal()}</Th>
             <Td></Td>
           </Tr>
@@ -92,10 +103,11 @@ const Cart = () => {
           </Tr>
         </Tbody>
       </Table>
+     
+      </Container>
       
-      <Center>
         <Checkout/>
-      </Center>
+     
     </>
   );
 };

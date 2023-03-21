@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContextComp";
-import { Container, Box, Button, Flex, Spacer, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Spacer, Text } from "@chakra-ui/react";
 import "../main.css";
 
 const ItemCount = ({ id, stock, price, name, img, description }) => {

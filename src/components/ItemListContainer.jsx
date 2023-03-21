@@ -1,7 +1,7 @@
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Heading, Center, Box } from "@chakra-ui/react";
+import { Heading, Center, Box , Text } from "@chakra-ui/react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemListContainer = () => {
@@ -24,10 +24,8 @@ const ItemListContainer = () => {
 
   return (
     <Box>
-      <Center bg="gray.200" h="100px" color="gray.600">
-        <Heading as="h5" size="xl">
-          CATALOGO DE PRODUCTOS
-        </Heading>
+      <Center  bg="white" h="80px" color="gray.700" borderBottom='1px' borderColor='gray.500'>
+       <Text  fontSize='3xl'>CATALOGO DE PRODUCTOS</Text>
       </Center>
       <Center>
       {category ? (

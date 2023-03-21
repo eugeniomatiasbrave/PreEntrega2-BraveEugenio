@@ -6,7 +6,7 @@ import "../main.css";
 const NavBar = () => {
   return (
     <>
-      <Container maxW="100rem" bg="red.600" color="white">
+      <Container maxW="100rem" bg="red.600" color="white" borderBottom='1px' borderColor='gray.900'>
         <Flex>
           <Box w="300px" h="12" bg="red.600">
             <Link to={"/"}>
@@ -23,7 +23,7 @@ const NavBar = () => {
             >
               <Menu>
                 <Link to={"/catalogo"}>
-                  <MenuButton>Catalogo</MenuButton>
+                  <MenuButton >Catalogo</MenuButton>
                 </Link>
               </Menu>
               <Spacer />

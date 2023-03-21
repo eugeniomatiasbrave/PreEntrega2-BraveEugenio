@@ -1,6 +1,6 @@
 import { CartContext } from "../context/CartContextComp";
-import { useContext, useState } from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { useContext } from "react";
+import { Box, Button, Flex } from "@chakra-ui/react";
 
 const CartWidget = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -12,7 +12,7 @@ const CartWidget = () => {
 
   return (
     <>
-      <Box w="50px" pt="2" pl="3">
+      <Box w="50px" pt="2" pl="3" >
         <Flex>
           <span className="material-symbols-outlined">shopping_cart</span>
           <h3>{cantidad}</h3>
