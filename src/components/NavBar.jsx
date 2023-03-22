@@ -6,15 +6,15 @@ import "../main.css";
 const NavBar = () => {
   return (
     <>
-      <Container maxW="100rem" bg="red.600" color="white" borderBottom='1px' borderColor='gray.900'>
+      <Container maxW="100rem" bg="rgb(188, 49, 49)" color="white" borderBottom='1px' borderColor='gray.900'>
         <Flex>
-          <Box w="300px" h="12" bg="red.600">
+          <Box w="300px" h="12" bg="rgb(188, 49, 49)">
             <Link to={"/"}>
               <h2 className="fuente-brand">Susan Flo Sweaters</h2>
             </Link>
           </Box>
           <Spacer />
-          <Box w="400px" h="10" bg="red.600">
+          <Box w="400px" h="10" bg="rgb(188, 49, 49)">
             <Flex
               display="flex"
               alignItems="center"
@@ -52,7 +52,7 @@ const NavBar = () => {
             </Flex>
           </Box>
           <Spacer />
-          <Box w="180px" h="10" bg="red.600">
+          <Box w="180px" h="10" bg="rgb(188, 49, 49)">
             <Link to={"/Cart"}>
               <CartWidget />
             </Link>

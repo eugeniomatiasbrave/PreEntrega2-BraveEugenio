@@ -6,7 +6,7 @@ const Item = ({ id, name, price, category, img }) => {
     <Box >
       <Box key={id}  >
         <Center ml="3.5rem" my="1rem" >
-          <Card w='300px' h='580px' boxShadow='2xl'>
+          <Card w='300px' h='575px' boxShadow='2xl'>
             <CardBody>
               <Image borderRadius="lg" src={img} />
               <Stack mt="6" spacing="3">
@@ -21,11 +21,11 @@ const Item = ({ id, name, price, category, img }) => {
             </CardBody>
             <Divider />
             <CardFooter>
-              <Center>
-                <Button variant="solid" colorScheme="red" size="sm">
-                  <Link to={`/item/${id}`}>Ver Producto</Link>
+              
+                <Button variant="solid" colorScheme="red" size="sm" width='100%' height='35px'>
+                  <Link to={`/item/${id}`} >Ver Producto</Link>
                 </Button>
-              </Center>
+              
             </CardFooter>
           </Card>
         </Center>

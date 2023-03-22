@@ -1,6 +1,6 @@
 import { CartContext } from "../context/CartContextComp";
 import { useContext } from "react";
-import { Box, Button, Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 const CartWidget = () => {
   const [cart, setCart] = useContext(CartContext);

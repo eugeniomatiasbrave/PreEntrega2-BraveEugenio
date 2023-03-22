@@ -29,12 +29,13 @@ const Cart = () => {
        <Text  fontSize='3xl'>TU CARRITO DE COMPRAS !!!</Text>
       </Center>
      
-      <Container maxW='container.l' my="40px" centerContent>
-    
+      <Container maxW='container.l' my="40px" centerContent >
       <Center my="10px">
            <Text fontSize="xl">PRODUCTOS AGREGADOS</Text>
          </Center>
-      <Table w="900 px">
+      
+      <Table w="900 px" border='1px' borderColor='gray.200' rounded='md' boxShadow='lg' p='12'>
+      
         <Thead>
           <Tr>
             <Th>Imagen</Th>

@@ -48,7 +48,7 @@ const Checkout = () => {
 
   return (
     <>
-    <Container maxW='container.sm' my="40px" centerContent>
+    <Container maxW='container.sm' my="60px" centerContent   border='1px' borderColor='gray.200' rounded='md' boxShadow='2xl'>
        <Box my="10px">
            <Text fontSize="xl">COMPLETA EL FORMULARIO PARA CONFIRMAR LA COMPRA</Text>
          </Box>
@@ -99,6 +99,8 @@ const Checkout = () => {
               variant="solid"
               colorScheme="red"
               size="sm"
+              width='100%'
+              height='35px'
             >
               Enviar y confirmar Compra       
             </Button>
@@ -112,8 +114,8 @@ const Checkout = () => {
        showCancelButton: true,
        cancelButtonText: '<a href="/catalogo" style="text-decoration: none; color: white" >Volver</a>',
        confirmButtonText: 'Comprar',
-       confirmButtonColor: "rgb(197, 48, 48)",
-       cancelButtonColor: "rgb(145, 146, 148)",
+       confirmButtonColor: "rgb(188, 49, 49)",
+       cancelButtonColor: "rgb(188, 49, 49)",
        showconfirmButton: true,
       })  : "" }   
       </Center>   
