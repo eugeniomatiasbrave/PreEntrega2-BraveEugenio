@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import CartContextProvider  from "./context/CartContextComp";
 import Footer from "./components/Footer";
+import Ofertas from "./components/Ofertas";
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route exact path="/item/:id" element={<ItemDetailContainer/>} />
           <Route exact path="/Cart" element={<Cart/>} />
           <Route exact path="/Checkout" element={<Checkout/>} />
+          <Route exact path="/Ofertas" element={<Ofertas/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>

@@ -1,18 +1,14 @@
 import Item from "./Item";
 import { Wrap } from "@chakra-ui/react";
 
-const ItemList = ({ vanlon }) => {
+const ItemList = ({ items }) => {
   return (
     <>
-
-<Wrap >
-   
-        {vanlon.map((vanlon) => (
-          <Item key={vanlon.id} {...vanlon} />
-        ))} 
-     
-  </Wrap>
-
+      <Wrap>
+        {items.map((item) => (
+          <Item key={item.id} {...item} />
+        ))}
+      </Wrap>
     </>
   );
 };

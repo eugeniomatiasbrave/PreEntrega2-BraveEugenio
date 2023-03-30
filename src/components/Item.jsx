@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Item = ({ id, name, price, category, img }) => {
   return (
     <Box >
-      <Box key={id}  >
+      <Box  >
         <Center ml="3.5rem" my="1rem" >
           <Card w='300px' h='575px' boxShadow='2xl'>
             <CardBody>

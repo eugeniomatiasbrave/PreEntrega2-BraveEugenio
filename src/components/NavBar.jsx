@@ -43,7 +43,10 @@ const NavBar = () => {
               </Menu>
               <Spacer />
               <Menu>
+              <Link to={"/Ofertas"}>
                 <MenuButton>Ofertas</MenuButton>
+                
+                </Link>
               </Menu>
               <Spacer />
               <Menu>
